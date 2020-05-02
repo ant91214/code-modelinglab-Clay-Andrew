@@ -75,7 +75,7 @@ public class Building extends JPanel implements ActionListener{
 		// frame becomes visible
 		frame.setVisible(true);		
 	}
-	
+	//comment
 	/* This invoked by Timer per period in milliseconds in timerValue  */
 	@Override
 	public void actionPerformed(ActionEvent e) {
