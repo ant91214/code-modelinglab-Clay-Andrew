@@ -2,6 +2,7 @@ package socialdistancing;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +29,21 @@ public class Building extends JPanel implements ActionListener{
 	Control control; //
 	Timer timer; //Event control	
 	int time = 0; //Track time as the simulation runs
+	Building view;
+	
+	public static Wall addVWall(int x, int y) {
+		int xCord = x;
+		int yCord = y;
+		Wall newWall = new Wall(xCord, yCord, "SocialDistancingImages/wall2.png", true);
+		return newWall;
+	}
+	
+	public static Wall addHWall(int x, int y) {
+		int xCord = x;
+		int yCord = y;
+		Wall newWall = new Wall(xCord, yCord, "SocialDistancingImages/wall1.png", false);
+		return newWall;
+	}
 	
 	/* constructor will setup our main Graphic User Interface - a simple Frame! */
 	public Building(Control ctl, String title) {

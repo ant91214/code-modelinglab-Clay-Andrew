@@ -98,7 +98,6 @@ public class Control {
 		public void runSimulation() {
 			//Setup to the Simulation Panel/Frame
 			Building view = new Building(this, title);
-			
 			//Setup the People
 			model = new ArrayList<Person>();
 			for(int i = 0; i < numPeople; i++) {
@@ -152,21 +151,18 @@ public class Control {
 				
 			}
 		}
-		
-		//Declares Wall sprites and positions of walls
-		static Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
-		static Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
-		static Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
-		static Wall vWall4 = new Wall(200, 400, "SocialDistancingImages/wall2.png", true);
-		
-		static Wall hWall1 = new Wall(620, 160, "SocialDistancingImages/wall1.png", false);
-		static Wall hWall2 = new Wall(-25, 160, "SocialDistancingImages/wall1.png", false);
-		static Wall hWall3 = new Wall(620, 400, "SocialDistancingImages/wall1.png", false);
-		static Wall hWall4 = new Wall(-25, 400, "SocialDistancingImages/wall1.png", false);
-		static Wall[] walls = {vWall1, hWall1, vWall2, hWall2, vWall3, hWall3, vWall4, hWall4};
-		static Rectangle[] r = {vWall1.getBounds(), hWall1.getBounds(), vWall2.getBounds(), hWall2.getBounds(),
+
+		Wall vWall1 = Building.addVWall(550, 0);
+		Wall vWall2 = Building.addVWall(200, 0);
+		Wall vWall3 = Building.addVWall(550, 400);
+		Wall vWall4 = Building.addVWall(200, 400);
+		Wall hWall1 = Building.addHWall(620, 160);
+		Wall hWall2 = Building.addHWall(-25, 160);
+		Wall hWall3 = Building.addHWall(620, 400);
+		Wall hWall4 = Building.addHWall(-25, 400);
+		Rectangle[] r = {vWall1.getBounds(), hWall1.getBounds(), vWall2.getBounds(), hWall2.getBounds(),
 				vWall3.getBounds(), hWall3.getBounds(), vWall4.getBounds(), hWall4.getBounds()};
-		
+		Wall[] walls = {vWall1, hWall1, vWall2, hWall2, vWall3, hWall3, vWall4, hWall4};
 		
 		public void paintWalls(Graphics g) {
 
